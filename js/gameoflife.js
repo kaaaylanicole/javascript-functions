@@ -5,7 +5,6 @@ function seed() {
 function same([x, y], [j, k]) {
   return x === j && y === k;
   }
-}
 
 // The game state to search for `cell` is passed as the `this` value of the function.
 function contains(cell) {
@@ -64,7 +63,7 @@ const willBeAlive = (cell, state) => {
   );
 };
 
-const calculateNext = (state) => {};
+const calculateNext = (state) => {
   const { bottomLeft, topRight} = corners(state);
   let result = [];
   for (let y = topRight[1] + 1; y >= bottomLeft[1] - 1; y--) {
@@ -73,6 +72,7 @@ const calculateNext = (state) => {};
     }
   }
   return result;
+}
 
 const iterate = (state, iterations) => {
   const states = [state];
